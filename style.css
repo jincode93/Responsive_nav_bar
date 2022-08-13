@@ -1,3 +1,4 @@
+/* 텍스트, 배경, 강조 색상을 따로 지정하고 나중에 쉽게 바꿀수 있도록 정의 */
 :root {
   --text-color: beige;
   --backgroundd-color: #263343;
@@ -9,6 +10,7 @@ body {
   font-family: 'Source Sans Pro';
 }
 
+/* var를 이용해서 위에 root에 정의해놓은 색상을 출력 */
 a{
   text-decoration: none;
   color: var(--text-color);
@@ -41,6 +43,7 @@ a{
   padding: 8px 12px;
 }
 
+/* hover를 이용해서 메뉴 위에 마우스를 가져가면 색상이 변화하도록 함 */
 .navbar_menu li:hover {
   background-color: var(--accent-color);
   border-radius: 4px;
@@ -57,6 +60,8 @@ a{
   padding: 8px 12px;
 }
 
+/* 반응형에서 화면이 작아지면 나오는 햄버거 아이콘 스타일 설정 
+  display를 none으로 줘서 화면 크기가 768px 이상일 때에는 안보이도록 함*/
 .navbar_toogleBtn {
   display: none;
   position: absolute;
@@ -65,6 +70,8 @@ a{
   color: var(--accent-color);
 }
 
+/* 반응형 웹으로 만들기 위한 media 정의 
+768px(테블릿용)을 기준으로 한가지만 추가*/
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -72,6 +79,7 @@ a{
     padding: 8px 24px;
   }
 
+  /* 메뉴를 중앙정렬 하기 위해 width를 100으로 줌 */
   .navbar_menu {
     display: none;
     flex-direction: column;
